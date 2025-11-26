@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: braintree-telegram-bot
+    env: python
+    region: frankfurt
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: ADMIN_USER_ID
+        sync: false
+      - key: PYTHON_VERSION
+        value: 3.11.0
